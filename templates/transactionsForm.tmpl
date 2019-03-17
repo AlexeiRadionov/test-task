@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Transactions</title>
+	</head>
+	<body>
+		<p>Выберите имя пользователя - отправителя:</p>
+		<select class="sender">
+			{% for item in users %}
+				<option>{{item.userName}}</option>
+			{% endfor %}
+		</select>
+
+		<p>Выберите имя пользователя - получателя:</p>
+		<select class="recipient">
+			{% for item in users %}
+				<option>{{item.userName}}</option>
+			{% endfor %}
+		</select>
+
+		<p>Введите сумму перевода:</p>
+		<input type="text" class="sum">
+
+		<p><button class="start">Перевести</button></p>
+
+		<div class="result"></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    	<script src="js/engine.js" type="text/javascript"></script>
+	</body>
+</html>
