@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 17 2019 г., 19:03
+-- Время создания: Мар 18 2019 г., 18:01
 -- Версия сервера: 5.7.20-log
--- Версия PHP: 5.6.32
+-- Версия PHP: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,10 +39,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `userName`, `sum`) VALUES
-(1, 'Иванов', '2889.00'),
-(2, 'Петров', '4424.50'),
-(3, 'Сидоров', '947.25'),
-(4, 'Потапов', '1550.00');
+(1, 'Иванов', '3654.45'),
+(2, 'Петров', '4408.15'),
+(3, 'Сидоров', '1012.25'),
+(4, 'Потапов', '1465.50'),
+(6, 'Кузьмин', '670.40'),
+(7, 'Кутузов', '200.00');
 
 --
 -- Индексы сохранённых таблиц
@@ -52,7 +54,8 @@ INSERT INTO `users` (`id_user`, `userName`, `sum`) VALUES
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `userName` (`userName`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -62,7 +65,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
