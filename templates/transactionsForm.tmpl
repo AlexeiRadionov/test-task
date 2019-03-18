@@ -6,21 +6,29 @@
 	</head>
 	<body>
 		<p>Выберите имя пользователя - отправителя:</p>
-		<select class="sender">
+		
+		<select id="sender" class="user" size="4">
+			<option selected disabled>Выберите отправителя</option>
 			{% for item in users %}
 				<option>{{item.userName}}</option>
 			{% endfor %}
 		</select>
+		
+		<div class="balanceSender"></div>
 
 		<p>Выберите имя пользователя - получателя:</p>
-		<select class="recipient">
+		
+		<select id="recipient" class="user" size="4">
+			<option selected disabled>Выберите получателя</option>
 			{% for item in users %}
 				<option>{{item.userName}}</option>
 			{% endfor %}
 		</select>
 
+		<div class="balanceRecipient"></div>
+
 		<p>Введите сумму перевода:</p>
-		<input type="text" class="sum">
+		<input type="number" class="sum">
 
 		<p><button class="start">Перевести</button></p>
 
