@@ -24,10 +24,17 @@
 			switch ($this -> page_name) {
 		        case 'index':
 		            $objTransactionsForm = new TransactionsForm();
-					$objTransactionsForm -> template();
+		            if ($this -> action == '') {
+		            	$objTransactionsForm -> template();
+		            } else if ($this -> action == 'balance') {
+		            	if (isset($_POST['user'])) {
+		            		$user = $_POST['user'];
+		            		echo $objTransactionsForm -> getBalance($user);
+		            	}
+		            }					
 		            break;
 		        case 'startTransaction':
-		        	if (isset($_POST['sender']) && isset($_POST['recipient']) && isset($_POST['sum'])) {
+		        	if (!empty($_POST['sender']) && !empty($_POST['recipient']) && !empty($_POST['sum'])) {
 		        		$sender = $_POST['sender'];
 		        		$recipient = $_POST['recipient'];
 		        		$sum = abs((float)$_POST['sum']);
