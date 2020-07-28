@@ -6,13 +6,9 @@
 	include '../models/Transactions.class.php';
 	
 	//подключаем автозагрузчик классов
-	spl_autoload_register(function($className) {
-		if (file_exists("../models/$className.class.php")) {
-			include "../models/$className.class.php";
-		} else if (file_exists("../Twig/$className.class.php")) {
-			include "../Twig/$className.class.php";
-		}
-	});
+	function __autoload($className) {
+		include "../models/$className.class.php";
+	}
 	
 	//подключаем контроллеры
 	include '../controllers/ControllerMain.class.php';
